@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenScreen</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/CineVerde/Styles/style.css">
+    <link rel="stylesheet" href="/CineVerde/Styles/modal.css">
+    <link rel="stylesheet" href="./src/notie/dist/notie.min.css">
+</head>
+<body>
+    <header>
+        <h2><i class="bi bi-film"></i> GreenScreen</h2>
+
+        <section id="search-container">
+
+            <div class="input-wrapper"> 
+                <label for="movie-name" class="label"></label> <!-- Etiquetas para linkar a legenda a caixa de entrada -->
+                <input type="text" id="movie-name" placeholder="Nome">
+                <label for="movie-year" class="label"></label>
+                <input type="text" id="movie-year" placeholder="Data">
+            </div>
+            
+            <button id="search-button"> <i class="bi bi-search"></i> </button>
+        </section>
+
+    </header>
+
+    <main>
+    
+        <section id="page-container">
+            
+            <h2>Comece agora sua lista de filmes!</h2>
+            <section id="movie-list"></section>
+            <article id="modal-overlay" class="overlay">
+                <section id="modal-background"></section>
+                <section id="modal-container"></section>
+            </article>
+
+        </section>
+
+        
+    </main>
+
+    <script src="/CineVerde/Scripts/script.js"></script>
+    <script src="/CineVerde/Scripts/modal.js"></script>
+    <script src="src/notie/dist/notie.min.js"></script>
+
+</body>
+</html>
