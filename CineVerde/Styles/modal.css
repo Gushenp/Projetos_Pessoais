@@ -1,11 +1,14 @@
 :root {
-    --color0: #ffffff;
-    --color1: #fff1cf;
-    --color2: #C89FA3;
-    --color3: #A67F8E;
-    --color4: #6C534E;
-    --color5: #2C1A1D;
+    --color1: #000000;
+    --color2: #03120e;
+    --color3: #1a1d1a;
+    --color4: #323532;
+    --color5: #3e505b;
+    --color6: #26412c;
+    --color7: #8ab0ab;
+    --color8: #ffffff;
 }
+
 
 #modal-overlay {
     display: flex;
