@@ -115,7 +115,34 @@ main > #page-container > h2{
 
 #movie-list{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
+    gap: 1em;
+    margin: 1em 0 0 0;
+}
+
+#movie-list > article {
+    display: flex;
+    background-color: var(--color4);
+    padding: 1em; border-radius: 1em 0 1em 0;
+    max-height: max-content;
+    width: max-content;
+    flex-direction: column; 
     align-items: center;
+}
+
+
+#movie-list img {
+    max-width: 100%; /* Garante que a imagem respeite o tamanho do container */
+}
+
+#movie-list button {
+    display: block;
+    margin: 1em 0 0 0;
+    width: 100%;
+    height: 2em;
+}
+
+#movie-list .i bi-trash {
+    margin-right: 100px;
 }

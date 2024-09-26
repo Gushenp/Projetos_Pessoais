@@ -1,0 +1,58 @@
+.notie-container {
+    font-size: 1.6rem;
+    height: auto;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    box-sizing: border-box;
+    -o-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+    -ms-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+  }
+  
+  @media screen and (max-width: 900px) {
+    .notie-container {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media screen and (max-width: 750px) {
+    .notie-container {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .notie-container {
+      font-size: 1rem;
+    }
+  }
+  
+  .notie-background-success {
+    background-color: #57bf57;
+  }
+  
+  .notie-background-warning {
+    background-color: #d6a14d;
+  }
+  
+  .notie-background-error {
+    background-color: #e1715b;
+  }
+  
+  .notie-background-info {
+    background-color: #4d82d6;
+  }
+  
+  .notie-background-neutral {
+    background-color: #a0a0a0;
+  }
+  
+  .notie-background-overlay {
+    background-color: #fff;
+  }
+  
+  .notie-textbox {
+    color

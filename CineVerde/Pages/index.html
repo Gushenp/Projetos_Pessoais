@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/CineVerde/Styles/style.css">
     <link rel="stylesheet" href="/CineVerde/Styles/modal.css">
-    <link rel="stylesheet" href="./src/notie/dist/notie.min.css">
+    <link rel="stylesheet" href="/CineVerde/notie/dist/notie.min.css">
 </head>
 <body>
     <header>
@@ -32,7 +32,17 @@
         <section id="page-container">
             
             <h2>Comece agora sua lista de filmes!</h2>
-            <section id="movie-list"></section>
+            <section id="movie-list">
+                
+                    <article id="movie-card-${movieObject.imdbID}"> 
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEzlgr5qZJWMLu8kBsmnTmZQpgIPvwk6kxvw&s" alt="Poster de ${movieObject.Title}."> 
+                        <button class="remove-button" onclick="{removeFilmFromList('${movieObject.imdbID}')}">
+                         <i class="bi bi-trash"></i>
+                         remover
+                        </button> 
+                    </article>
+
+            </section>
             <article id="modal-overlay" class="overlay">
                 <section id="modal-background"></section>
                 <section id="modal-container"></section>
@@ -45,7 +55,7 @@
 
     <script src="/CineVerde/Scripts/script.js"></script>
     <script src="/CineVerde/Scripts/modal.js"></script>
-    <script src="src/notie/dist/notie.min.js"></script>
+    <script src="/CineVerde/notie/dist/notie.min.js"></script>
 
 </body>
 </html>
