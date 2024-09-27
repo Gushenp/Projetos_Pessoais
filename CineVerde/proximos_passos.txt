@@ -1,0 +1,2 @@
+- Adicionar o título aos filmes.
+- Função de ler sobre o filme já adiconado à lista.

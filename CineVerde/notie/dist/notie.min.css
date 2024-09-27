@@ -40,7 +40,12 @@
 }
 
 .notie-background-success{
-    background-color:#57bf57
+    background-color:#57bf57;
+    transition: transform .5s ease-in-out;
+}
+
+.notie-background-success:hover{
+    transform: scale(1.05);
 }
 
 .notie-background-warning{
@@ -48,8 +53,12 @@
 }
 
 .notie-background-error{
-    background-color:#e1715b
+    background-color:#e1715b;
+    transition: transform .5s ease-in-out;
+}
 
+.notie-background-error:hover{
+    transform: scale(1.05);
 }
 
 .notie-background-info{
