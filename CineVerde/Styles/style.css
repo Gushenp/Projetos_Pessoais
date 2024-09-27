@@ -118,19 +118,18 @@ main > #page-container > h2{
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
-    margin: 1em 0 0 0;
+    margin: 1em 0 2em 0;
 }
 
-#movie-list > article {
+#movie-list  article{
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: var(--color4);
     padding: 1em; border-radius: 1em 0 1em 0;
-    max-height: max-content;
     width: max-content;
-    flex-direction: column; 
     align-items: center;
 }
-
 
 #movie-list img {
     max-width: 100%; /* Garante que a imagem respeite o tamanho do container */
