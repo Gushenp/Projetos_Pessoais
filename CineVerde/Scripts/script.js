@@ -2,8 +2,7 @@ const $searchButton = document.getElementById('search-button');
 const overlay = document.getElementById('modal-overlay');
 const movieName = document.getElementById('movie-name');
 const movieYear = document.getElementById('movie-year');
-const movieListContainer = document.getElementById('movie-list')
-
+const movieListContainer = document.getElementById('movie-list');
 
 //let movieList = [];
 let movieList = JSON.parse(localStorage.getItem("movieList")) ?? [];
@@ -50,8 +49,9 @@ function addToList(movieObject){
 function updateUI(movieObject) {
     //console.log('current movie: ', currentMovie)
     movieListContainer.innerHTML += `
-    <article id="movie-card-${movieObject.imdbID}"> 
+    <article id="movie-card-${movieObject.imdbID} class="movie-card"> 
         <img src="${movieObject.Poster}" alt="Poster de ${movieObject.Title}."> 
+        <p>${movieObject.Title}</p>
         <button class="remove-button" onclick="{removeFilmFromList('${movieObject.imdbID}')}">
          <i class="bi bi-trash"></i>
          remover

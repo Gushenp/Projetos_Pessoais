@@ -19,21 +19,19 @@
     height: 100dvh;
     justify-content: center;
     align-items: center;
-    transition: transform .5s;
+    transition: opacity .3 ease-in-out;
 }
 
 .overlay {
     visibility: hidden;
     opacity: 0;
-    transform: scale(0);
-    transition: opacity .3s ease, transform .3s ease, visibility 0s .3s;
+    transition: opacity .3s ease-in-out;
 }
 
 .overlay.open {
     visibility: visible;
     opacity: 1;
-    transform: scale(1);
-    transition: opacity .3s ease, transform .3s ease;
+    transition: opacity .3s ease-in-out;
 }
 
 #modal-background{
@@ -94,14 +92,16 @@
 #add-to-list{
     all: unset;
     padding: .2rem;
-    border: 1px solid var(--color5);
+    border: 1px solid var(--color4);
     border-radius: 2px;
     width: 100%;
-    cursor: pointer;
-    box-shadow: 2px 2px 10px #000; /* baixo, direira, bluur, cor */
+    /* cursor: pointer; */
+    
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 #add-to-list:hover{
-    background-color: #cbcbcb;
+    background-color: var(--color6);
     color: var(--color0);
+    box-shadow: 0px 0px 10px 4px #164d029e;
 }
