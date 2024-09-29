@@ -13,14 +13,14 @@ async function searchButtonClickHandler() {
         const response = await fetch(url);
         const data = await response.json();
         console.log('data:', data)
-        if (data.Error) {
-            throw new Error('Filme não encontrado.')
-        }
+            if (data.Error) {
+                throw new Error('Filme não encontrado.')
+            }
         creatmodal(data);
-        overlay.classList.add('open'); } catch(error) {
-            console.log(error)
-            notie.alert({ type: 'error', text: error.message })
-        }
+            overlay.classList.add('open'); } catch(error) {
+                console.log(error)
+                notie.alert({ type: 'error', text: error.message })
+            }
 }
 
 function movieNameParameterGenerator() {
@@ -49,7 +49,7 @@ function addToList(movieObject){
 function updateUI(movieObject) {
     //console.log('current movie: ', currentMovie)
     movieListContainer.innerHTML += `
-    <article id="movie-card-${movieObject.imdbID} class="movie-card"> 
+    <article id="movie-card-${movieObject.imdbID}" class="movie-card"> 
         <img src="${movieObject.Poster}" alt="Poster de ${movieObject.Title}."> 
         <p>${movieObject.Title}</p>
         <button class="remove-button" onclick="{removeFilmFromList('${movieObject.imdbID}')}">
@@ -73,7 +73,7 @@ function removeFilmFromList(id){
         } 
     })
 }
-
+''
 function updateLocalStorage() {
     localStorage.setItem('movieList', JSON.stringify(movieList));
 }
