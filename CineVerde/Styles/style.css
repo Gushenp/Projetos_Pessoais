@@ -28,11 +28,11 @@ button{
 /* #Especificações específicas */
 
 /* ##cabeçalho da página */
-html,body {
+html, body {
     display: flex;
     flex-direction: column;
-    min-height: 100dvh;
-
+    min-height: 90vh;
+    margin: 0;
 }
 
 header {
@@ -93,13 +93,13 @@ header > section > #search-button:hover {
 
 main{
     display: flex;
-    min-height: 90dvh;
+    min-height: 90vh;
     justify-content: center;
 
     /* Imagem background ao fundo */
     background-image: url(/CineVerde/files/background.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:  cover;
     background-attachment: fixed;
     background-position: right center;
     
@@ -108,12 +108,11 @@ main{
 main > #page-container{
     margin: 1em;
     width: 90%;
+    height: 100vh;
     border-radius: 1em 0em 1em 0em;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.868);
     color: var(--color8);
-
-    
 }
 
 main > #page-container > h2{

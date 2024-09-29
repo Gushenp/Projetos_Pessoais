@@ -48,15 +48,26 @@ function addToList(movieObject){
 
 function updateUI(movieObject) {
     //console.log('current movie: ', currentMovie)
-    movieListContainer.innerHTML += `
+    const article = document.createElement('article')
+    article.id = `movie-card-${movieObject.imdbID}`
+    article.className = `movie-card`
+    
+    article.innerHTML += `
     <article id="movie-card-${movieObject.imdbID}" class="movie-card"> 
         <img src="${movieObject.Poster}" alt="Poster de ${movieObject.Title}."> 
         <p>${movieObject.Title}</p>
-        <button class="remove-button" onclick="{removeFilmFromList('${movieObject.imdbID}')}">
+        <button class="remove-button" onclick="{removeFilmFromList('${movieObject.imdbID}')}; event.stopPropagation()">
          <i class="bi bi-trash"></i>
          remover
         </button> 
     </article> `
+
+    article.addEventListener('click', () => {
+        creatmodal(movieObject);
+        overlay.classList.add('open')
+    })
+
+    movieListContainer.appendChild(article);
 }
 
 function removeFilmFromList(id){
