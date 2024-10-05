@@ -1,6 +1,9 @@
 const cronometerView = document.getElementById('cronometer-view');
 const startButton = document.getElementById('start-button');
 
+startButton.classList.add('start')
+
+
 let starTime = {
     minutes: 25,
     seconds: 0,
@@ -20,11 +23,14 @@ async function timerExecutation() {
     if (timerActive) {
         clearInterval(timer);
         timerActive = false;
+        startButton.classList.remove('stop')
+        startButton.classList.add('start')
         startButton.innerText = 'Start';
         return;
     }
 
     timerActive = true;
+    startButton.classList.add('stop')
     startButton.innerText = 'Stop';
     
     updateDisplay();

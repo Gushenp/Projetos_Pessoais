@@ -39,16 +39,57 @@ main{
     background-color: var(--color9);
 }
 
-#timer-container{
+
+#timer-visor-container{
+    width: auto;
     display: flex;
-    height: 15rem;
-    margin: 2rem 1rem 0 1rem;
+    justify-content: center;
+}
+
+#functions-container{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 0 0;
+    justify-content: space-between;
+}
+
+
+
+.function{
+    z-index: 1;
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 1rem;
+    background-color: #cb2a2a9c;
+    border-radius: 0 10px 10px 0;
+    transform: translateX(-70px);
+    transition: transform 1s;
+}
+
+.animation-on{
+    transform: translateX(-30px);
+}
+
+.timer-container{
+    z-index: 2;
+    display: flex;
+    height: 20rem;
+    width: 30rem;
+    margin: 2rem 0rem 0 1rem;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #7c19199c;
+    background-color: #7c1919;
     color: var(--color8);
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
+    transition: transform 1s;
+}
+
+.timer-container-on{
+    transform: translateX(-30px);
 }
 
 #cronometer-view{
@@ -59,10 +100,24 @@ main{
 #start-button{
     height: 3.5rem;
     width: 10rem;
+    margin-top: 20px;
     cursor: pointer;
     border: none;
     border-radius: 5px;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    transition: transform 0.5s, box-shadow 0.5s, background-color 0.5s;
+}
+
+.start{
     box-shadow: rgb(190, 190, 190) 0px 5px 0px;
     background-color: var(--color8);
-
 }
+
+.stop{
+    background-color: #d9d9d9;
+    transform: translateY(5px);
+    box-shadow: rgb(190, 190, 190) 0px 0px 0px;
+}
+

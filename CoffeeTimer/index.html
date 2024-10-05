@@ -12,11 +12,20 @@
             <h3>Coffee Pomodoro</h3>
         </div>
         
-        <div id="timer-container">
+        <div id="timer-visor-container">
+            <div class="timer-container">
     
-            <p id="cronometer-view">25:00</p>
-            <button id="start-button">Start</button>
-    
+                <p id="cronometer-view">25:00</p>
+                <button id="start-button">Start</button>
+        
+            </div>
+            <div id="functions-container">
+                <div class="function" id="function-25">25 minutes</div>
+                <div class="function" id="function-50">50 minutes</div>
+                <div class="function" id="function-break-5">short break</div>
+                <div class="function" id="function-break-30">long break</div>
+            </div>
+            
         </div>
     
         <div id="task-container">
@@ -26,5 +35,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js"></script>
     <script src="./scripts/moment.js"></script>
+    <script src="./scripts/function.js"></script>
 </body>
 </html>
