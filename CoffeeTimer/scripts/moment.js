@@ -1,53 +1,53 @@
-const cronometerView = document.getElementById('cronometer-view')
-const startButton = document.getElementById('start-button')
+const cronometerView = document.getElementById('cronometer-view');
+const startButton = document.getElementById('start-button');
 
 let starTime = {
-    minutes: 2,
-    seconds: 10,
+    minutes: 25,
+    seconds: 0,
 };
 
 let minute = starTime.minutes;
 let second = starTime.seconds;
+let timerActive = false;
+let timer;
 
-let startCount = moment().hour(0).minute(minute).second(second);
-
-function delay(ms){
-    return new Promise(resolve => setTimeout(resolve, ms));
+function updateDisplay() {
+    const displayTime = moment().hour(0).minute(minute).second(second);
+    cronometerView.innerHTML = displayTime.format('mm:ss');
 }
 
 async function timerExecutation() {
-
-    while (minute > -1) {
-        let startCount = moment().hour(0).minute(minute).second(second);
-        
-        let secondsT = 59;
-        cronometerView.innerHTML = startCount.format('HH:mm:ss')
-
-        await delay(1000)
-            if (second > 0 || secondsT === 59){
-                while(second > 0) {
-                    second -= 1;
-                    let startCount = moment().hour(0).minute(minute).second(second);
-                    cronometerView.innerHTML = startCount.format('HH:mm:ss')
-                    console.log(startCount.format('HH:mm:ss'))
-                    await delay(1000)
-                }
-            } else {
-                while(secondsT > 0) {
-                    secondsT -= 1
-                    let startCount = moment().hour(0).minute(minute).second(second);
-                    cronometerView.innerHTML = startCount.format('HH:mm:ss')
-                    console.log(startCount.format('HH:mm:ss'))
-                    await delay(1000)
-                }
-            }
-    minute -= 1;
-    second = 59;
-    }{
-        console.log('contagem finalizada')
+    if (timerActive) {
+        clearInterval(timer);
+        timerActive = false;
+        startButton.innerText = 'Start';
+        return;
     }
+
+    timerActive = true;
+    startButton.innerText = 'Stop';
+    
+    updateDisplay();
+
+    timer = setInterval(() => {
+        if (second === 0) {
+            if (minute === 0) {
+                clearInterval(timer);
+                timerActive = false;
+                startButton.innerText = 'Start';
+                console.log('Contagem finalizada');
+                return;
+            } else {
+                minute--;
+                second = 59;
+            }
+        } else {
+            second--;
+        }
+        updateDisplay();
+    }, 1000);
 }
 
+updateDisplay();
 
-
-startButton.addEventListener('click', timerExecutation)
+startButton.addEventListener('click', timerExecutation);

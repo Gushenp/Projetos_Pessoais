@@ -1,0 +1,68 @@
+:root {
+    --color1: #000000;
+    --color2: #03120e;
+    --color3: #1a1d1a;
+    --color4: #323532;
+    --color5: #3e505b;
+    --color6: #26412c;
+    --color7: #8ab0ab;
+    --color8: #ffffff;
+    --color9: #ff6262;
+    --color10: #ff626258;
+}
+
+* {     
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#header{
+    text-align: center;
+    background-color: var(--color10);
+    box-shadow: #000000 0px 2px 0px;
+    padding: 1rem 0 1rem 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    padding: 0 2rem 0 2rem;
+    background-color: var(--color9);
+}
+
+#timer-container{
+    display: flex;
+    height: 15rem;
+    margin: 2rem 1rem 0 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #7c19199c;
+    color: var(--color8);
+    border-radius: 10px;
+}
+
+#cronometer-view{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 5rem;
+}
+
+#start-button{
+    height: 3.5rem;
+    width: 10rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgb(190, 190, 190) 0px 5px 0px;
+    background-color: var(--color8);
+
+}
