@@ -1,24 +1,12 @@
 const olas = document.querySelectorAll('.ola');
 const container = document.querySelector('.block1')
 
-function addClass() {
-    olas.forEach(ola => {
-        ola.classList.add('olaVerde');
-    });
 
-    container.classList.add('block1T')
-
-}
-
-function removeClass() {
-    olas.forEach(ola => {
-        ola.classList.remove('olaVerde');
-    });
-
-    container.classList.remove('block1T')
+function addClass(element) {
+    olas.forEach(ola => ola.classList.remove('red')); // Remove a classe de todos
+    element.classList.add('red'); // Adiciona a classe ao clicado
 }
 
 olas.forEach(ola => {
-    ola.addEventListener('mouseover', addClass); // Adiciona a classe quando o mouse passa por cima
-    ola.addEventListener('mouseout', removeClass); // Remove a classe quando o mouse sai
+    ola.addEventListener('click', () => addClass(ola));
 });

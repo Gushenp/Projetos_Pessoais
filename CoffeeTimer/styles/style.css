@@ -1,26 +1,27 @@
 :root {
-    --color1: #000000;
-    --color2: #03120e;
-    --color3: #1a1d1a;
-    --color4: #323532;
-    --color5: #3e505b;
-    --color6: #26412c;
-    --color7: #8ab0ab;
-    --color8: #ffffff;
-    --color9: #ff6262;
-    --color10: #ff626258;
+    --cor0: #ffffff;
+    --cor1: #E5E5E5;
+    --cor2: #F5E7CE;
+    --cor3: #8199B6;
+    --cor4: #636B75;
+    --cor5: #605849;
+    --cor6: #332916;
+    --cor7: #202936;
+    --cor8: #d6cab5;
+    --cor9: #b9af9e;
+    --cor10: #8b7e68;
 }
 
 * {     
     box-sizing: border-box; 
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #header{
     text-align: center;
-    background-color: var(--color10);
+    background-color: var(--cor2);
     box-shadow: #000000 0px 2px 0px;
     padding: 1rem 0 1rem 0;
 }
@@ -31,19 +32,27 @@ body{
     min-height: 100vh;
 }
 
+#message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0 1em 0;
+    font-weight: bold;
+    color: var(--cor5);
+    font-size: 25px;
+}
+
 main{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     padding: 0 2rem 0 2rem;
-    background-color: var(--color9);
+    background-color: var(--cor2);
 }
-
 
 #timer-visor-container{
     width: 100%;
     height: 100%;
-    margin: 2em 0 0 0 ;
     display: flex;
     justify-content: center;
 
@@ -68,20 +77,21 @@ main{
     height: 70px;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: auto;
     padding: 1rem;
-    background-color: #cb2a2a9c;
+    background-color: var(--cor9);
     border-radius: 0 10px 10px 0;
     cursor: pointer;
     transition: background-color .5s;
 }
 
 .function-animation{
-    background-color: #8ab0ab;
+    background-color: var(--cor10);
 }
 
 .select{
-    background-color: red;
+    background-color: var(--cor8);
 }
 
 .timer-container{
@@ -93,8 +103,8 @@ main{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #7c1919;
-    color: var(--color8);
+    background-color: var(--cor8);
+    color: var(--cor0);
     border-radius: 10px 0 0 10px;
     transform: translateX(40px);
     transition: transform 1s;
@@ -107,6 +117,9 @@ main{
 #cronometer-view{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 5rem;
+    padding: 10px 10px 10px 10px;
+    border-radius: 15px;
+    background-color: var(--cor9);
 }
 
 #start-button{
@@ -123,12 +136,14 @@ main{
 }
 
 .start{
+    color: var(--cor8);
     box-shadow: rgb(190, 190, 190) 0px 5px 0px;
-    background-color: var(--color8);
+    background-color: var(--cor0);
 }
 
 .stop{
-    background-color: #d9d9d9;
+    color: var(--cor0);
+    background-color: var(--cor9);
     transform: translateY(5px);
     box-shadow: rgb(190, 190, 190) 0px 0px 0px;
 }

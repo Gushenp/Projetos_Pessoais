@@ -63,6 +63,7 @@ startButton.addEventListener('click', timerExecutation);
 const functions = document.querySelectorAll('.function');
 const functionsContainer = document.querySelector('.functions-container');
 const timerContainer = document.querySelector('.timer-container');
+const message = document.getElementById('message');
 
 function addAnimationFC(){
     functionsContainer.classList.add('AnimationFC')
@@ -90,6 +91,7 @@ function changeTimerTo25() {
     starTime.seconds = 0; 
     minute = starTime.minutes;
     second = starTime.seconds
+    message.innerHTML = '<p>Pomodoro time!</p>'
     timerActive = false;
     startButton.classList.remove('stop')
     startButton.classList.add('start')
@@ -105,6 +107,7 @@ function changeTimerTo50() {
     starTime.seconds = 0; 
     minute = starTime.minutes;
     second = starTime.seconds
+    message.innerHTML = '<p>Pomodoro time!</p>'
     timerActive = false;
     startButton.classList.remove('stop')
     startButton.classList.add('start')
@@ -120,6 +123,7 @@ function changeTimerToSbreak() {
     starTime.seconds = 0; 
     minute = starTime.minutes;
     second = starTime.seconds
+    message.innerHTML = '<p>Beak time!</p>'
     timerActive = false;
     startButton.classList.remove('stop')
     startButton.classList.add('start')
@@ -136,6 +140,7 @@ function changeTimerToLbreak() {
     starTime.seconds = 0; 
     minute = starTime.minutes;
     second = starTime.seconds
+    message.innerHTML = '<p>Beak time!</p>'
     timerActive = false;
     startButton.classList.remove('stop')
     startButton.classList.add('start')
@@ -156,9 +161,13 @@ function removeColor(element) {
     element.classList.remove('function-animation');
 }
 
+function select(element){
+    functions.forEach(func => func.classList.remove('select'))
+    element.classList.add('select')
+}
+
 functions.forEach(func => {
     func.addEventListener('mouseover', () => changeColor(func));
     func.addEventListener('mouseout', () => removeColor(func));
     func.addEventListener('click', () => select(func));
 });
-
