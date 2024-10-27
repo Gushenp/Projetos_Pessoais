@@ -1,0 +1,78 @@
+:root {
+    --cor1: #ffffff;
+    --cor2: #e7e7e7;
+    --cor3:  #F59F36;
+    --cor4: #feb55d;
+    --cor5:  #c07c29;
+}
+
+#header {
+    color: var(--cor0);
+    box-shadow: var(--cor1) 0px 2px 0px;
+    transition: color 0.5s, box-shadow  0.5s;
+}
+
+#message {
+    color: var(--cor1);
+    transition: color 0.5s;
+}
+
+main {
+    background-color: var(--cor3);
+    transition: background-color 0.5s;
+}
+
+.function {
+    background-color: var(--cor5);
+    color: var(--cor1);
+    cursor: pointer;
+    transition: background-color .5s, color 0.5s;
+}
+
+.pFunction{
+    opacity: 0;
+    font-weight: bold;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.show{
+    opacity: 1;
+}
+
+.function-animation {
+    background-color: var(--cor4);
+    transition: background-color 0.5s;
+}
+
+.select {
+    background-color: var(--cor4);
+    transition: background-color 0.5s;
+}
+
+.timer-container {
+    background-color: var(--cor4);
+    color: var(--cor3);
+    transition: background-color 0.5s, color 0.5s, transform 1s;;
+}
+
+#cronometer-view {
+    background-color: var(--cor1);
+    color: var(--cor3);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+#start-button {
+    transition: box-shadow 0.5s, background-color 0.5s, transform 0.5s;
+}
+
+.start {
+    color: var(--cor3);
+    box-shadow: rgb(190, 190, 190) 0px 5px 0px;
+    background-color: var(--cor0);
+}
+
+.stop {
+    color: var(--cor1);
+    background-color: var(--cor5);
+    box-shadow: rgb(190, 190, 190) 0px 0px 0px;
+}

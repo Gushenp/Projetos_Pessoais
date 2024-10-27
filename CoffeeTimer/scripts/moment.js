@@ -1,12 +1,27 @@
 const cronometerView = document.getElementById('cronometer-view');
 const startButton = document.getElementById('start-button');
+const head  = document.getElementById('head')
 const startAudio = document.getElementById('start_audio');
 const stopAudio = document.getElementById('stop_audio');
 const finishedAudio = document.getElementById('finised_audio')
 
 
 startButton.classList.add('start')
+pomodoroModeStyle()
 
+function pomodoroModeStyle(){
+    const  link = document.createElement("link")
+    link.rel = "stylesheet";
+    link.href = "./styles/pomodoro_time.css";
+    document.head.appendChild(link)
+}
+
+function breakModeStyle(){
+    const  link = document.createElement("link")
+    link.rel = "stylesheet";
+    link.href = "./styles/break_time.css";
+    document.head.appendChild(link)
+}
 
 let starTime = {
     minutes: 25,
@@ -77,16 +92,36 @@ const message = document.getElementById('message');
 
 function addAnimationFC(){
     functionsContainer.classList.add('AnimationFC')
+    innerTextToFunctions()
     timerContainer.classList.add('AnimationTC')
 }
 
 function removeAnimationFC(){
     functionsContainer.classList.remove('AnimationFC')
+    removeTextToFunctions()
     timerContainer.classList.remove('AnimationTC')
 }
 
-functionsContainer.addEventListener('mouseover', addAnimationFC)
-functionsContainer.addEventListener('mouseout', removeAnimationFC)
+function innerTextToFunctions() {
+    setTimeout(() => {
+        const functionsp = document.querySelectorAll('.function p');
+        functionsp.forEach(p => {
+            p.classList.add('show')
+        });
+    }, 500)
+}
+
+function removeTextToFunctions() {
+    setTimeout(() => {
+        const functionsp = document.querySelectorAll('.function p');
+        functionsp.forEach(p => {
+            p.classList.remove('show')
+        });
+    }, 0)
+} 
+
+functionsContainer.addEventListener('mouseenter', addAnimationFC)
+functionsContainer.addEventListener('mouseleave', removeAnimationFC)
 
 const function25 = document.getElementById('function-25')
 const function50 = document.getElementById('function-50')
@@ -97,6 +132,7 @@ function changeTimerTo25() {
     if (timerActive) {
         clearInterval(timer);
     }
+    pomodoroModeStyle()
     starTime.minutes = 25;
     starTime.seconds = 0; 
     minute = starTime.minutes;
@@ -113,6 +149,7 @@ function changeTimerTo50() {
     if (timerActive) {
         clearInterval(timer);
     }
+    pomodoroModeStyle()
     starTime.minutes = 50;
     starTime.seconds = 0; 
     minute = starTime.minutes;
@@ -129,6 +166,7 @@ function changeTimerToSbreak() {
     if (timerActive) {
         clearInterval(timer);
     }
+    breakModeStyle()
     starTime.minutes = 5;
     starTime.seconds = 0; 
     minute = starTime.minutes;
@@ -146,6 +184,7 @@ function changeTimerToLbreak() {
     if (timerActive) {
         clearInterval(timer);
     }
+    breakModeStyle()
     starTime.minutes = 30;
     starTime.seconds = 0; 
     minute = starTime.minutes;

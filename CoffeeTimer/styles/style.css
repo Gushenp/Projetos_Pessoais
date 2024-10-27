@@ -20,10 +20,17 @@
 }
 
 #header{
-    text-align: center;
-    background-color: var(--cor2);
-    box-shadow: #000000 0px 2px 0px;
+    display: flex;
+    font-size: 20px;
+    text-align: left;
+    align-items: center;
     padding: 1rem 0 1rem 0;
+}
+
+#coffee-icon{
+    padding: 0;
+    transform: translateY(-1px);
+    margin-right: 10px;
 }
 
 body{
@@ -38,7 +45,6 @@ body{
     justify-content: center;
     margin: 1em 0 1em 0;
     font-weight: bold;
-    color: var(--cor5);
     font-size: 25px;
 }
 
@@ -47,7 +53,6 @@ main{
     flex-direction: column;
     min-height: 100vh;
     padding: 0 2rem 0 2rem;
-    background-color: var(--cor2);
 }
 
 #timer-visor-container{
@@ -78,20 +83,11 @@ main{
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: auto;
+    width: 115px;
     padding: 1rem;
-    background-color: var(--cor9);
     border-radius: 0 10px 10px 0;
     cursor: pointer;
-    transition: background-color .5s;
-}
-
-.function-animation{
-    background-color: var(--cor10);
-}
-
-.select{
-    background-color: var(--cor8);
+    
 }
 
 .timer-container{
@@ -103,8 +99,6 @@ main{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--cor8);
-    color: var(--cor0);
     border-radius: 10px 0 0 10px;
     transform: translateX(40px);
     transition: transform 1s;
@@ -119,7 +113,7 @@ main{
     font-size: 5rem;
     padding: 10px 10px 10px 10px;
     border-radius: 15px;
-    background-color: var(--cor9);
+
 }
 
 #start-button{
@@ -132,18 +126,9 @@ main{
     font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
-    transition: transform 0.5s, box-shadow 0.5s, background-color 0.5s;
-}
-
-.start{
-    color: var(--cor8);
-    box-shadow: rgb(190, 190, 190) 0px 5px 0px;
-    background-color: var(--cor0);
+    transition: transform 0.5s;
 }
 
 .stop{
-    color: var(--cor0);
-    background-color: var(--cor9);
     transform: translateY(5px);
-    box-shadow: rgb(190, 190, 190) 0px 0px 0px;
 }

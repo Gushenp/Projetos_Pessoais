@@ -1,4 +1,5 @@
-const play = document.getElementById('pla');
-const audio = document.getElementById('aud')
+const square = document.getElementById('object');
 
-play.addEventListener('click', () => {audio.play()}) 
+square.addEventListener('click', () => {
+    square.classList.add('hidden'); // Adiciona a classe 'hidden' para ocultar o elemento
+});
