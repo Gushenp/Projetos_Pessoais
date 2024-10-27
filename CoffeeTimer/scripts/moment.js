@@ -1,5 +1,9 @@
 const cronometerView = document.getElementById('cronometer-view');
 const startButton = document.getElementById('start-button');
+const startAudio = document.getElementById('start_audio');
+const stopAudio = document.getElementById('stop_audio');
+const finishedAudio = document.getElementById('finised_audio')
+
 
 startButton.classList.add('start')
 
@@ -24,6 +28,7 @@ async function timerExecutation() {
         clearInterval(timer);
         timerActive = false;
         startButton.classList.remove('stop')
+        stopAudio.play()
         startButton.classList.add('start')
         startButton.innerText = 'Start';
         return;
@@ -31,6 +36,7 @@ async function timerExecutation() {
 
     timerActive = true;
     startButton.classList.add('stop')
+    startAudio.play()
     startButton.innerText = 'Stop';
     
     updateDisplay();
@@ -42,6 +48,10 @@ async function timerExecutation() {
                 timerActive = false;
                 startButton.innerText = 'Start';
                 console.log('Contagem finalizada');
+                minute = starTime.minutes
+                second  = starTime.seconds
+                updateDisplay()
+                finishedAudio.play()
                 return;
             } else {
                 minute--;
