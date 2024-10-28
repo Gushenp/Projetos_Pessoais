@@ -65,8 +65,9 @@ async function timerExecutation() {
                 console.log('Contagem finalizada');
                 minute = starTime.minutes
                 second  = starTime.seconds
-                updateDisplay()
+                startButton.classList.remove('stop')
                 finishedAudio.play()
+                updateDisplay()
                 return;
             } else {
                 minute--;
