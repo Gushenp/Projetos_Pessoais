@@ -1,16 +1,23 @@
 const listContainer = document.getElementById('list-container');
 const addTaskButton = document.getElementById('add-task');
 
-function addTask(){
+const TaskList = [];
+let idNumber = 0;
 
-    
+function creatATaskID() {
+    idNumber ++;
+    TaskList.push(idNumber)
+}
+
+function addTask(){
+    creatATaskID();
 
     let taskHTML = `
-    <li class="list-checkbox ${order}">
+    <li class="list-checkbox" id="taskID${idNumber}">
         <label class="custom-checkbox">
             <input type="checkbox" class="check">
             <span class="checkmark"></span>
-            Task 1
+            taskId${idNumber}
         </label>
         <div id="task-buttons-container">
             <button class="edit-button task-button">
@@ -26,10 +33,16 @@ function addTask(){
             </button>
         </div>
     </li>
-    `
+    `;
 
     listContainer.insertAdjacentHTML('beforeend', taskHTML)
-}
+
+    const deleteButton = listContainer.querySelector(`#taskID${idNumber} .delete-task`);
+    deleteButton.addEventListener('click', function() {
+        const taskItem = deleteButton.closest('li');
+        taskItem.remove();
+    });
+};
 
 
 addTaskButton.addEventListener('click', addTask)
