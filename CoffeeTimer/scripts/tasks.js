@@ -1,7 +1,7 @@
 const listContainer = document.getElementById('list-container');
 const addTaskButton = document.getElementById('add-task');
 
-const TaskList = [];
+let TaskList = [];
 let idNumber = 0;
 
 function creatATaskID() {
@@ -11,6 +11,8 @@ function creatATaskID() {
 
 function addTask(){
     creatATaskID();
+
+    alert(TaskList)
 
     let taskHTML = `
     <li class="list-checkbox" id="taskID${idNumber}">
@@ -41,6 +43,7 @@ function addTask(){
     deleteButton.addEventListener('click', function() {
         const taskItem = deleteButton.closest('li');
         taskItem.remove();
+
     });
 };
 
