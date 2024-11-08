@@ -28,3 +28,13 @@ botao.addEventListener('click', () => {
         });
     });
 });
+
+//aaaaaaaaa
+
+const submit = document.getElementById('enviar')
+const input = document.getElementById('inputtext')
+const texto = document.getElementById('textt')
+
+submit.addEventListener('click', () => {
+    texto.textContent = input.value
+})

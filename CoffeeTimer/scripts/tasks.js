@@ -4,14 +4,15 @@ const addTaskButton = document.getElementById('add-task');
 let TaskList = [];
 let idNumber = 0;
 
-async function addTask() {
+function addTask() {
     let taskHTML = `
     <li class="list-checkbox" id="taskID${idNumber}">
         <label class="custom-checkbox">
             <input type="checkbox" class="check">
             <span class="checkmark"></span>
         </label>
-        <input type="text" class="task-content">
+        <input type="text" class="inputtext">
+        <input type="submit" value="OK" class="enviar">
         <div id="task-buttons-container">
             <button class="edit-button task-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -30,13 +31,14 @@ async function addTask() {
 
     listContainer.insertAdjacentHTML('beforeend', taskHTML);
 
+    addAtaskcontent()
+
     TaskList.push({ id: idNumber, element: document.getElementById(`taskID${idNumber}`) });
     idNumber++;
 
     
     updateDeleteButtons();
 }
-
 
 function updateDeleteButtons() {
     const deleteButtons = document.querySelectorAll('.delete-task');
