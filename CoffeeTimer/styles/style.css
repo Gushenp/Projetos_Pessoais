@@ -48,6 +48,7 @@ body{
 main{
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-height: 100vh;
     padding: 0 2rem 0 2rem;
 }
@@ -132,137 +133,127 @@ main{
 
 /* Tasks */
 
-#task-container {
-    width: 100%;
-    height: 100%;
+#addtaskbutton{
+    display: flex;
+    border: none;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+#addtaskbutton:hover{
+    background-color: var(--cor3);
+}
+
+#addtaskbutton > p{
+    width: 30px;
+    height: max-content;
+    padding: 5px;
+    color: var(--cor0);
+    background-color: var(--cor4);
+    transition: color 0.5s, background-color 0.5s;
+}
+
+#addtaskbutton:hover > p{
+    color: var(--cor3);
+    background-color: var(--cor0);
+}
+
+#listcontainer{
+    display: flex;
+    width: 595px;
     margin-top: 20px;
-    padding-bottom: 10px;
+    padding: 0 10px 10px 10px;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: var(--cor4);
+}
+
+.task{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px 10px 10px 10px;
+    background-color: var(--cor6);
+}
+
+.inputtasks{
+    display: flex;
+    flex-direction: row;
+    width: 45%;
+    justify-content: space-between;
+}
+
+.tasktext{
+    border: none;
+    outline: none;
+    padding-left: 5px;
+    caret-color: var(--cor5);
+    border-radius: 8px 0 0 8px;
+    color: var(--cor5);
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    width: 23px;
+    height: 23px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--cor0);
+}
+
+input[type="checkbox"]:checked{
+    background-color: var(--cor5);
+}
+
+.tasksubmit{
+    padding: 0 5px 0 5px;
+    border: none;
+    border-radius: 0px 8px 8px 0;
+    cursor: pointer;
+}
+
+.buttonsed{
+    display: flex;
+    flex-direction: row;
+}
+
+.edittask{
     display: flex;
     justify-content: center;
-    background-color: var(--cor4);
-    transition: background-color 0.5s;
-}
-
-#list-container {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    margin: 0 10px;
-    width: 100%;
-    height: 100%;
-}
-
-.list-checkbox {
-    display: flex;
-    height: 45px;
-    padding-left: 15px;
-    justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
-    margin: 10px 0 0 0;
-    background-color: var(--cor6);
-    transition: background-color 0.5s;
-}
-
-.custom-checkbox {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    color: var(--cor0);
-    font-weight: bold;
-    transition: color 0.5s;
-}
-
-.custom-checkbox input {
-    display: none;
-}
-
-.checkmark {
-    width: 20px; 
-    height: 20px;
-    border: 2px solid #ffffff;
-    background-color: #ffffff;
-    border-radius: 4px; 
-    margin-right: 10px; 
-    position: relative;
-    transition: background-color 0.5s;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.custom-checkbox input:checked + .checkmark:after {
-    display: block;
-}
-
-.custom-checkbox .checkmark:after {
-    left: 5px; 
-    top: .5px;
-    width: 5px;
-    height: 10px;
-    border: solid #000000;
-    border-width: 0 2px 2px 0; 
-    transform: rotate(45deg);
-}
-
-#add-task{
     border: none;
-    height: 45px;
-    border-radius: 4px;
-    margin: 10px 0 0 0;
-    font-weight: bold;
-    font-size: 20px;
-    color:var(--cor3);
+    margin-right: 5px;
+    padding:4px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    color: var(--cor3);
+    transition: color 0.5s, background-color 0.2s;
 }
 
-#add-task:hover{
+.edittask:hover{
     background-color: var(--cor5);
     color: var(--cor0);
-    transition: background-color 0.5s, color 0.3s;
 }
 
-
-#task-buttons-container{
-    margin: 0 6px 0 0;
-}
-
-.task-button{
-    height: 30px;
-    width: 30px;
+.deletetask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
-    border-radius: 4px;
-    margin: 0 5px 0 0;
+    padding:4px;
     cursor: pointer;
+    color: var(--cor3);
+    transition: color 0.5s, background-color 0.2s;
 }
 
-.task-button:hover{
+.deletetask:hover{
     background-color: var(--cor5);
-}
-
-.edit-button{
-    color: var(--cor3);
-    font-weight: bold;
-    transition: color 0.5s;
-}
-
-.edit-button:hover{
     color: var(--cor0);
-    transition: color 0.5s;
-}
-
-.bi-trash-fill{
-    width: 16px;
-    height: 13px;
-    color: var(--cor3);
-    transition: color 0.5s;
-}
-
-.task-button:hover .bi-trash-fill {
-    color: white;
-    transition: color 0.5s;
 }
