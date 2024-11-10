@@ -253,6 +253,8 @@ input[type="checkbox"]:checked{
     transition: color 0.5s, background-color 0.2s;
 }
 
+/* aa */
+
 .deletetask:hover{
     background-color: var(--cor5);
     color: var(--cor0);
