@@ -9,7 +9,10 @@ botao.addEventListener('click', () => {
     <div class="object" id="object-${value}">
         Esse objeto tem o valor: ${value}
         <button class="excluir" data-id="${value}">Excluir</button>
-    </div>`;
+        <input type="text" class="inputtext">
+        <input type="submit" value="OK" class="enviar">
+       
+     </div>`;
     
     body.insertAdjacentHTML('beforeend', task);
     list.push(value);
@@ -27,4 +30,15 @@ botao.addEventListener('click', () => {
             }
         });
     });
+
+    const submit = document.querySelectorAll('.enviar')
+    const input = document.querySelectorAll('.inputtext')
+    const texto = document.getElementById('textt')
+
+    submit.addEventListener('click', () => {
+    texto.textContent = input.value
+    })
 });
+
+//aaaaaaaaa
+

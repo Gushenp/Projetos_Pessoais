@@ -1,14 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .task {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .task input[type="text"] {
+      margin-left: 10px;
+    }
+    .task button {
+      margin-left: 10px;
+    }
+  </style>
 </head>
-<body id="bodyy">
-    
-    <button id="botao">Clique em mim</button>
-    <script src="./scrippt.js"></script>
+<body>
+  <h1>Lista de Tarefas</h1>
+  <div id="taskList"></div>
+  <button onclick="addTask()">Adicionar Tarefa</button>
+
+  <script>
+    let taskCount = 0;
+
+    function addTask() {
+      taskCount++;
+
+      // Cria um novo elemento div para a tarefa
+      const taskDiv = document.createElement("div");
+      taskDiv.classList.add("task");
+
+      // Adiciona o texto com o número da tarefa
+      const taskLabel = document.createElement("span");
+      taskLabel.innerText = `Tarefa ${taskCount}: `;
+      taskDiv.appendChild(taskLabel);
+
+      // Cria um campo input para a descrição da tarefa
+      const taskInput = document.createElement("input");
+      taskInput.type = "text";
+      taskInput.placeholder = "Digite a descrição da tarefa";
+      taskDiv.appendChild(taskInput);
+
+      // Cria o botão Enviar
+      const sendButton = document.createElement("button");
+      sendButton.innerText = "Enviar";
+      sendButton.onclick = function() {
+        // Ao clicar em "Enviar", exibe a descrição e remove o input e o botão
+        const description = taskInput.value.trim();
+        if (description) {
+          taskInput.style.display = "none";
+          sendButton.style.display = "none";
+          taskLabel.innerText += description;  // Exibe a descrição ao lado do rótulo da tarefa
+        } else {
+          alert("Por favor, digite a descrição da tarefa.");
+        }
+      };
+      taskDiv.appendChild(sendButton);
+
+      // Adiciona o novo elemento à lista de tarefas
+      document.getElementById("taskList").appendChild(taskDiv);
+    }
+  </script>
 </body>
 </html>
