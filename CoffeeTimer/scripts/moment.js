@@ -221,3 +221,6 @@ functions.forEach(func => {
     func.addEventListener('mouseout', () => removeColor(func));
     func.addEventListener('click', () => select(func));
 });
+
+
+/* comitte */

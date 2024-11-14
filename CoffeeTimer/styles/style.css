@@ -257,3 +257,15 @@ input[type="checkbox"]:checked{
     background-color: var(--cor5);
     color: var(--cor0);
 }
+
+.bi-trash-fill{
+    width: 16px;
+    height: 13px;
+    color: var(--cor3);
+    transition: color 0.5s;
+}
+
+.task-button:hover .bi-trash-fill {
+    color: white;
+    transition: color 0.5s;
+}
