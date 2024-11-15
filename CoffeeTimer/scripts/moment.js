@@ -132,8 +132,8 @@ const lbreak = document.getElementById('function-break-30')
 function changeTimerTo25() {
     if (timerActive) {
         clearInterval(timer);
+        stopAudio.play()
     }
-    pomodoroModeStyle()
     starTime.minutes = 25;
     starTime.seconds = 0; 
     minute = starTime.minutes;
@@ -149,6 +149,7 @@ function changeTimerTo25() {
 function changeTimerTo50() {
     if (timerActive) {
         clearInterval(timer);
+        stopAudio.play()
     }
     pomodoroModeStyle()
     starTime.minutes = 50;
@@ -166,13 +167,14 @@ function changeTimerTo50() {
 function changeTimerToSbreak() {
     if (timerActive) {
         clearInterval(timer);
+        stopAudio.play()
     }
     breakModeStyle()
     starTime.minutes = 5;
     starTime.seconds = 0; 
     minute = starTime.minutes;
     second = starTime.seconds
-    message.innerHTML = '<p>Beak time!</p>'
+    message.innerHTML = '<p>Break time!</p>'
     timerActive = false;
     startButton.classList.remove('stop')
     startButton.classList.add('start')
@@ -184,13 +186,14 @@ function changeTimerToSbreak() {
 function changeTimerToLbreak() {
     if (timerActive) {
         clearInterval(timer);
+        stopAudio.play()
     }
     breakModeStyle()
     starTime.minutes = 30;
     starTime.seconds = 0; 
     minute = starTime.minutes;
     second = starTime.seconds
-    message.innerHTML = '<p>Beak time!</p>'
+    message.innerHTML = '<p>Break time!</p>'
     timerActive = false;
     startButton.classList.remove('stop')
     startButton.classList.add('start')

@@ -5,6 +5,7 @@
     --cor4: #5ECBFF;
     --cor5:  #288EBF;
     --cor6: #a0e1ff;
+    --cor7:  #288fbf63;
 }
 
 #header {
@@ -68,6 +69,3 @@ main {
     background-color: var(--cor5);
     box-shadow: rgb(190, 190, 190) 0px 0px 0px;
 }
-
-
-/* commite */
