@@ -20,6 +20,7 @@
 #header{
     display: flex;
     font-size: 20px;
+    width: 100%;
     text-align: left;
     align-items: center;
     padding: 1rem 0 1rem 0;
@@ -132,6 +133,11 @@ main{
     transform: translateY(5px);
 }
 
+#tasksintroduction{
+    margin-top: 30px;
+    color: var(--cor0);
+}
+
 /* Tasks */
 
 #addtaskbutton{
@@ -165,16 +171,18 @@ main{
 #addtaskbutton:hover > p{
     color: var(--cor3);
     background-color: var(--cor0);
+    transition: color 0.5s, background-color 0.5s;
 }
 
 #listcontainer{
     display: flex;
     width: 595px;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 0 10px 10px 10px;
     flex-direction: column;
     border-radius: 8px;
     background-color: var(--cor4);
+    transition: color 0.5s, background-color 0.5s;
 }
 
 .task{
@@ -194,14 +202,21 @@ main{
 .inputtasks{
     display: flex;
     flex-direction: row;
-    width: 45%;
-    justify-content: space-between;
+    width: 100%;
 }
 
 .tasktext{
     border: none;
     outline: none;
+    width: auto;
+    min-width: 200px;
+    max-width: 300px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    resize: none;
+    overflow: hidden;
     padding-left: 5px;
+    margin-right: 2px;
     caret-color: var(--cor5);
     border-radius: 8px 0 0 8px;
     color: var(--cor5);
@@ -211,6 +226,7 @@ input[type="checkbox"]{
     appearance: none;
     width: 23px;
     height: 23px;
+    margin-right: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -281,11 +297,14 @@ input[type="checkbox"]:checked{
 }
 
 .todo-text {
-    width: 90%;
+    max-width: 90%;
     padding-left: 5px;
     color: var(--cor0);
     font-weight: bolder;
     text-decoration: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
     transition: text-decoration 0.3s ease;
 }
 

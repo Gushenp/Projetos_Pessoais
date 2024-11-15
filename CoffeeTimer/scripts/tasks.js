@@ -42,7 +42,26 @@ function createinputtext(inputscontainer) {
     inputtext.placeholder = "Nome da tarefa";
     inputscontainer.appendChild(inputtext);
     inputtext.focus();
+
+    inputtext.addEventListener("input", () => {
+        const text = inputtext.value;
+        const tempSpan = document.createElement("span");
+    
+        tempSpan.style.visibility = "hidden";
+        tempSpan.style.position = "absolute";
+        tempSpan.style.whiteSpace = "pre";
+        tempSpan.style.font = window.getComputedStyle(inputtext).font;
+    
+        tempSpan.textContent = text || inputtext.placeholder;
+    
+        document.body.appendChild(tempSpan);
+    
+        inputtext.style.width = `${tempSpan.offsetWidth + 10}px`;
+
+        document.body.removeChild(tempSpan);
+    });
 }
+
 
 function createinputsubmit(inputscontainer) {
     const inputsubmit = document.createElement("input");
