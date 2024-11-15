@@ -235,6 +235,7 @@ input[type="checkbox"]:checked{
 
 .edittask{
     display: flex;
+    height: 25px;
     justify-content: center;
     align-items: center;
     border: none;
@@ -252,6 +253,7 @@ input[type="checkbox"]:checked{
 
 .deletetask{
     display: flex;
+    height: 25px;
     justify-content: center;
     align-items: center;
     border: none;

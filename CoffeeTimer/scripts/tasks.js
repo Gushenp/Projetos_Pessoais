@@ -51,13 +51,25 @@ function createinputsubmit(inputscontainer) {
     inputsubmit.className = "tasksubmit";
     inputscontainer.appendChild(inputsubmit);
 
+    const inputtextcampo = inputscontainer.querySelector(".tasktext");
+
+    inputtextcampo.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            handleTaskSubmission();
+        }
+    });
+
     inputsubmit.addEventListener("click", (event) => {
         event.preventDefault();
-        const inputtextcampo = inputscontainer.querySelector(".tasktext");
+        handleTaskSubmission();
+    });
+
+    function handleTaskSubmission() {
         const inputtextvalue = inputtextcampo.value;
 
         if (inputtextvalue === '') {
-            alert('digite um valor');
+            alert('Digite um valor');
         } else {
             inputsubmit.remove();
             inputtextcampo.remove();
@@ -67,7 +79,7 @@ function createinputsubmit(inputscontainer) {
             texttak.textContent = `${inputtextvalue}`;
             inputscontainer.appendChild(texttak);
         }
-    });
+    }
 }
 
 function createbuttonsedcotainer(task) {
