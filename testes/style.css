@@ -1,9 +1,0 @@
-.object {
-    width: 100px;
-    height: 100px;
-    background-color: blue;
-    color: aliceblue;
-    text-align: center;
-    opacity: 100;
-    transition: opacity 1s ease-in-out; /* Transição suave */
-}
